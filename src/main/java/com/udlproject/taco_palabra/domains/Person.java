@@ -22,6 +22,11 @@ public class Person {
 
     public Person(){}
 
+    public Person(String name){
+        this.name = name;
+        this.date_created = new Date();
+    }
+
     public Person(Long id, String name, List<PersonWordEntity> personWord) {
         this.id = id;
         this.name = name;

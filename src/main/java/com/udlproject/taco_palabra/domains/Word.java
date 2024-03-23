@@ -21,4 +21,39 @@ public class Word {
     @OneToMany(mappedBy = "word", cascade = CascadeType.ALL, fetch = FetchType.LAZY, orphanRemoval = true)
     @JsonIgnore
     private List<PersonWordEntity> personWord = new ArrayList<>();
+
+    public Word(){}
+
+    public Word(Long id, String value, List<PersonWordEntity> personWord) {
+        this.id = id;
+        this.value = value;
+        this.personWord = personWord;
+    }
+    public Word(String value) {
+        this.value = value;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getValue() {
+        return value;
+    }
+
+    public void setValue(String value) {
+        this.value = value;
+    }
+
+    public List<PersonWordEntity> getPersonWord() {
+        return personWord;
+    }
+
+    public void setPersonWord(List<PersonWordEntity> personWord) {
+        this.personWord = personWord;
+    }
 }

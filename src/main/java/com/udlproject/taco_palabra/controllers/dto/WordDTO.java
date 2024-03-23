@@ -16,6 +16,10 @@ public class WordDTO {
     private List<PersonWordEntity> personWord = new ArrayList<>();
 
 
+    public WordDTO(String value) {
+        this.value = value;
+    }
+
     public WordDTO(Long id, String value, List<PersonWordEntity> personWord) {
         this.id = id;
         this.value = value;
