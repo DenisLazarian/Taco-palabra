@@ -37,4 +37,9 @@ public class WordServiceImpl implements IWordService {
     public void deleteById(Long id) {
         this.wordDAO.deleteById(id);
     }
+
+    @Override
+    public int addWordCounterByPerson(Long personId, Long wordId) {
+        return this.wordDAO.addWordCounterByPerson(personId, wordId);
+    }
 }

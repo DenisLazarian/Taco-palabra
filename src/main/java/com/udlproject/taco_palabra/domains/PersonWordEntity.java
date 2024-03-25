@@ -10,8 +10,6 @@ import java.util.List;
 public class PersonWordEntity {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-
     @ManyToOne
     @JoinColumn(name = "person_id")
     @JsonIgnore
@@ -25,4 +23,10 @@ public class PersonWordEntity {
     @Column(name = "date_spoken", nullable = false)
     private Date dateSpoken;
 
+
+    public PersonWordEntity(Person person, Word word, Date dateSpoken) {
+        this.person = person;
+        this.word = word;
+        this.dateSpoken = dateSpoken;
+    }
 }

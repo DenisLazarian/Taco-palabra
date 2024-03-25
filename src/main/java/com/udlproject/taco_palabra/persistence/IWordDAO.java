@@ -15,4 +15,6 @@ public interface IWordDAO {
     void save(Word word);
 
     void deleteById(Long id);
+
+    int addWordCounterByPerson(Long personId, Long wordId);
 }

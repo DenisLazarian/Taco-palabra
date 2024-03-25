@@ -88,4 +88,13 @@ public class WordController {
        return ResponseEntity.notFound().build();
     }
 
+    @PostMapping("/add/{person_id}/{word_id}")
+    public ResponseEntity<?> addWordCounterByPerson(@PathVariable Long person_id, @PathVariable Long word_id){
+        int result = wordService.addWordCounterByPerson(person_id, word_id);
+
+        if(result < 0) return ResponseEntity.badRequest().build();
+        else return ResponseEntity.ok("Word counted with exit.");
+    }
+
+
 }
